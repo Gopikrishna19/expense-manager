@@ -4,6 +4,7 @@
   "description": "Expense Manager",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint . --ignore-path .gitignore",
     "start": "nodemon . --watch src/server --watch src/schema",
     "serve": "node ."
   },
