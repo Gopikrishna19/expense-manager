@@ -40,6 +40,8 @@
         "caseSensitive": true,
         "natural": true
       }
-    ]
+    ],
+    "prefer-const": "error",
+    "object-shorthand": "error"
   }
 }

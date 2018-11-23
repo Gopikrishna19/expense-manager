@@ -4,14 +4,16 @@
   "description": "Expense Manager",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon . --watch src/server",
+    "start": "nodemon . --watch src/server --watch src/schema",
     "serve": "node ."
   },
   "author": "Gopikrishna Sathyamurthy",
   "license": "MIT",
   "dependencies": {
     "body-parser": "1.18.3",
-    "express": "4.16.4"
+    "express": "4.16.4",
+    "express-graphql": "0.7.1",
+    "graphql": "14.0.2"
   },
   "devDependencies": {
     "eslint": "5.9.0",
