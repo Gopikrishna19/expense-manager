@@ -1,0 +1,14 @@
+{
+  "name": "expense-manager",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "author": "Gopikrishna Sathyamurthy",
+  "license": "MIT",
+  "dependencies": {
+    "express": "4.16.4"
+  }
+}
