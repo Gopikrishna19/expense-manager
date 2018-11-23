@@ -6,6 +6,7 @@ const {
 } = require('graphql');
 
 const {Entry} = require('./entry');
+const models = require('../models');
 
 const entries = {
     description: 'Get all entries',
@@ -16,7 +17,9 @@ const entries = {
 const entry = {
     args: {id: {type: GraphQLID}},
     description: 'Get one entry',
-    resolve() { },
+    resolve(parent, args) {
+        models.Entry.find({id: args.id});
+    },
     type: Entry
 };
 
