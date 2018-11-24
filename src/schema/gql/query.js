@@ -2,7 +2,8 @@ const {
     GraphQLObjectType,
     GraphQLID,
     GraphQLFloat,
-    GraphQLList
+    GraphQLList,
+    GraphQLNonNull
 } = require('graphql');
 
 const {Entry} = require('./entry');
@@ -17,10 +18,10 @@ const entries = {
 };
 
 const entry = {
-    args: {id: {type: GraphQLID}},
+    args: {id: {type: new GraphQLNonNull(GraphQLID)}},
     description: 'Get one entry',
     resolve(parent, args) {
-        return models.Entry.find({id: args.id});
+        return models.Entry.findById(args.id);
     },
     type: Entry
 };
