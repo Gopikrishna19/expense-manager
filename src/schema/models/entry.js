@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
 
 const entrySchema = new mongoose.Schema({
+    amount: Number,
     category: String,
-    date: Number,
+    date: Date,
     reason: String,
     type: String
 });

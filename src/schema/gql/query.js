@@ -10,7 +10,9 @@ const models = require('../models');
 
 const entries = {
     description: 'Get all entries',
-    resolve() { },
+    resolve() {
+        return models.Entry.find();
+    },
     type: new GraphQLList(Entry)
 };
 
@@ -18,7 +20,7 @@ const entry = {
     args: {id: {type: GraphQLID}},
     description: 'Get one entry',
     resolve(parent, args) {
-        models.Entry.find({id: args.id});
+        return models.Entry.find({id: args.id});
     },
     type: Entry
 };
@@ -26,7 +28,9 @@ const entry = {
 const initialAmount = {
     description: 'Get initial amount',
     resolve() {
-        return 0;
+        return models.InitialAmount
+            .find()
+            .then(results => results [0].amount);
     },
     type: GraphQLFloat
 };
