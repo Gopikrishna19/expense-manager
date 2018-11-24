@@ -13,10 +13,12 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.use(express.static(path.resolve(__dirname, '..', 'client', 'static')));
+app.use(express.static(path.resolve(__dirname, '..', 'client', 'dist')));
 
 (async () => {
     await mongoose.connect(dbUrl, {useNewUrlParser: true});
+
+    require('./index.dev')(app);
 
     app.use('/api', graphQL({
         graphiql: true,

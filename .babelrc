@@ -1,0 +1,15 @@
+{
+    "plugins": [
+        "@babel/syntax-dynamic-import",
+        [
+            "@babel/proposal-class-properties",
+            {
+                "loose": true
+            }
+        ]
+    ],
+    "presets": [
+        "@babel/env",
+        "@babel/react"
+    ]
+}
