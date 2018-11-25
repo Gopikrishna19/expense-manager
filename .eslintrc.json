@@ -48,5 +48,10 @@
     "prefer-const": "error",
     "object-shorthand": "error",
     "prefer-template": "error"
+  },
+  "settings": {
+    "react": {
+      "version": "16.6.3"
+    }
   }
 }
