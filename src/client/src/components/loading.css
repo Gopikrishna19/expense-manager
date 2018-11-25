@@ -1,3 +1,5 @@
+@import '../theme/palatte.css';
+
 .container {
     text-align: center;
 }
@@ -9,7 +11,7 @@
 }
 
 .dot {
-    composes: defaultPrimaryColor from '../theme/palatte.css';
+    background-color: var(--defaultPrimaryColor);
     height: 10px;
     width: 10px;
     margin: 5px;

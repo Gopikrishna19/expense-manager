@@ -46,6 +46,7 @@
       }
     ],
     "prefer-const": "error",
-    "object-shorthand": "error"
+    "object-shorthand": "error",
+    "prefer-template": "error"
   }
 }

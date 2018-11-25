@@ -77,7 +77,11 @@ module.exports = (env, options) => {
                 favicon: 'src/client/src/favicon.ico',
                 template: 'src/client/src/index.html'
             })
-        ]
+        ],
+        stats: {
+            children: false,
+            modules: false
+        }
     };
 
     if (mode === development) {

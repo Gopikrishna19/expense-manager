@@ -1,16 +1,20 @@
-const webpack = require('webpack');
+const development = 'development';
 
-const config = require('../../webpack.config')(null, {});
+module.exports = (app, mode = development) => {
+    if (mode === development) {
+        const webpack = require('webpack');
 
-const compiler = webpack(config);
+        const config = require('../../webpack.config')(null, {});
 
-const devMiddleware = require('webpack-dev-middleware')(compiler, {
-    publicPath: config.output.publicPath,
-    stats: 'minimal'
-});
-const hotMiddleware = require('webpack-hot-middleware')(compiler);
+        const compiler = webpack(config);
 
-module.exports = app => {
-    app.use(devMiddleware);
-    app.use(hotMiddleware);
+        const devMiddleware = require('webpack-dev-middleware')(compiler, {
+            stats: 'minimal',
+            writeToDisk: true
+        });
+        const hotMiddleware = require('webpack-hot-middleware')(compiler);
+
+        app.use(devMiddleware);
+        app.use(hotMiddleware);
+    }
 };

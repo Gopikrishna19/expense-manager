@@ -1,0 +1,18 @@
+@import '../theme/palatte.css';
+
+.nav {
+    display: flex;
+    list-style: none;
+}
+
+.nav li a {
+    display: inline-block;
+    border-color: var(--lightPrimaryColor);
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    padding: 10px;
+}
+
+.nav li a.active {
+    border-color: var(--defaultPrimaryColor);
+}
