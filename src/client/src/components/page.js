@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import {any, string} from 'prop-types';
 import React from 'react';
 import DocumentTitle from 'react-document-title';
 
@@ -13,6 +13,6 @@ export const Page = props =>
     </DocumentTitle>;
 
 Page.propTypes = {
-    children: PropTypes.any,
-    title: PropTypes.string
+    children: any,
+    title: string
 };

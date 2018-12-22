@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import {func, string} from 'prop-types';
 import React from 'react';
 import Loadable from 'react-loadable';
 import {Loading} from './loading';
@@ -18,7 +18,7 @@ export const LoadComponent = props => {
 };
 
 LoadComponent.propTypes = {
-    loader: PropTypes.func.isRequired,
-    name: PropTypes.string
+    loader: func.isRequired,
+    name: string
 };
 LoadComponent.defaultProps = {name: 'default'};
