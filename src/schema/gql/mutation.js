@@ -1,6 +1,4 @@
-const {
-    GraphQLObjectType
-} = require('graphql');
+const {GraphQLObjectType} = require('graphql');
 
 const {Entry, entryFields} = require('./entry');
 const models = require('../models');
@@ -14,8 +12,6 @@ const addEntry = {
 };
 
 module.exports.Mutation = new GraphQLObjectType({
-    fields: {
-        addEntry
-    },
+    fields: {addEntry},
     name: 'Mutation'
 });

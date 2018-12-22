@@ -1,6 +1,4 @@
-const {
-    GraphQLEnumType
-} = require('graphql');
+const {GraphQLEnumType} = require('graphql');
 
 module.exports.TransactionType = new GraphQLEnumType({
     name: 'TransactionType',

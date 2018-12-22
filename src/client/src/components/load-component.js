@@ -21,6 +21,4 @@ LoadComponent.propTypes = {
     loader: PropTypes.func.isRequired,
     name: PropTypes.string
 };
-LoadComponent.defaultProps = {
-    name: 'default'
-};
+LoadComponent.defaultProps = {name: 'default'};

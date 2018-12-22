@@ -22,8 +22,6 @@ const $Loading = props =>
         </div>
     </div>;
 
-$Loading.propTypes = {
-    classes: object.isRequired
-};
+$Loading.propTypes = {classes: object.isRequired};
 
 export const Loading = withStyles(styles)($Loading);

@@ -9,9 +9,7 @@ module.exports = (env, options) => {
     const {mode = development} = options;
 
     const config = {
-        entry: {
-            index: './src/client/src'
-        },
+        entry: {index: './src/client/src'},
         mode,
         module: {
             rules: [

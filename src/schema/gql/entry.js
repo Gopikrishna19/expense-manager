@@ -1,10 +1,4 @@
-const {
-    GraphQLObjectType,
-    GraphQLID,
-    GraphQLString,
-    GraphQLFloat,
-    GraphQLNonNull
-} = require('graphql');
+const {GraphQLObjectType, GraphQLID, GraphQLString, GraphQLFloat, GraphQLNonNull} = require('graphql');
 
 const {TransactionType} = require('./transaction-type');
 const {Timestamp} = require('./timestamp');

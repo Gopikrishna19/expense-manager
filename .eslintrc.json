@@ -29,6 +29,16 @@
       "error",
       "unix"
     ],
+    "object-curly-newline": [
+      2,
+      {
+        "ObjectExpression": {
+          "multiline": true,
+          "minProperties": 0
+        },
+        "ObjectPattern": "never"
+      }
+    ],
     "quotes": [
       "error",
       "single"

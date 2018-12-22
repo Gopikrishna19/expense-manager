@@ -7,6 +7,4 @@ export const RouterProvider = props =>
         <Route render={props.children}/>
     </BrowserRouter>;
 
-RouterProvider.propTypes = {
-    children: func.isRequired
-};
+RouterProvider.propTypes = {children: func.isRequired};
