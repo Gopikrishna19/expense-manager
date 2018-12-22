@@ -7,7 +7,6 @@ const getTitle = props => `Expense Manager${props.title ? ` | ${props.title}` : 
 export const Page = props =>
     <DocumentTitle title={getTitle(props)}>
         <>
-            <h2>{props.title}</h2>
             {props.children}
         </>
     </DocumentTitle>;
