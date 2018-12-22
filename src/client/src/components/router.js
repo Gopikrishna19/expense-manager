@@ -9,7 +9,7 @@ import {SummaryLoadable} from '../loadables/summary';
 
 const styles = theme => ({routeContainer: {padding: theme.spacing.unit * 3}});
 
-const $Router = props =>
+const _Router = props =>
     <>
         <Route exact path='/' render={() => <Redirect to='summary'/>}/>
         <Typography component='div' className={props.classes.routeContainer}>
@@ -19,6 +19,6 @@ const $Router = props =>
         </Typography>
     </>;
 
-$Router.propTypes = {classes: object.isRequired};
+_Router.propTypes = {classes: object.isRequired};
 
-export const Router = withStyles(styles)($Router);
+export const Router = withStyles(styles)(_Router);

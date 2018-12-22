@@ -12,7 +12,7 @@ const styles = (theme) => ({
     }
 });
 
-const $Loading = props =>
+const _Loading = props =>
     <div className={join(loading.container, props.classes.container)}>
         <div className={loading.loader}>
             <div className={join(loading.dot, props.classes.dot)}/>
@@ -22,6 +22,6 @@ const $Loading = props =>
         </div>
     </div>;
 
-$Loading.propTypes = {classes: object.isRequired};
+_Loading.propTypes = {classes: object.isRequired};
 
-export const Loading = withStyles(styles)($Loading);
+export const Loading = withStyles(styles)(_Loading);
