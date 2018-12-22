@@ -3,15 +3,21 @@ import Tabs from '@material-ui/core/Tabs';
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import {RouteContext} from '../providers/route-context-provider';
-import {addNewEntry, entries, summary} from '../utils/path';
+import {entries, summary} from '../utils/path';
+
+const validTabs = [
+    entries,
+    summary
+];
+const getValidTab = tab => validTabs.includes(tab) ? tab : '';
 
 export const Navigation = () =>
     <RouteContext.Consumer>
         {({location}) =>
-            <Tabs value={location.pathname} centered>
+            <Tabs value={getValidTab(location.pathname)} centered>
                 <Tab component={NavLink} label='Summary' to={summary} value={summary}/>
                 <Tab component={NavLink} label='Entries' to={entries} value={entries}/>
-                <Tab component={NavLink} label='Add new entry' to={addNewEntry} value={addNewEntry}/>
+                <Tab component='span' value='' style={{display: 'none'}}/>
             </Tabs>
         }
     </RouteContext.Consumer>;

@@ -13,6 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "@material-ui/core": "3.7.1",
+    "@material-ui/icons": "3.0.1",
     "body-parser": "1.18.3",
     "chalk": "2.4.1",
     "express": "4.16.4",
