@@ -6,5 +6,3 @@ export const AddEntryLoadable = () =>
         loader={() => import('../components/add-entry')}
         name='AddEntry'
     />;
-
-AddEntryLoadable.displayName = 'AddEntryLoadable';

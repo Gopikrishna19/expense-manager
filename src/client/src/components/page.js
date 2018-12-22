@@ -12,7 +12,6 @@ export const Page = props =>
         </>
     </DocumentTitle>;
 
-Page.displayName = 'Page';
 Page.propTypes = {
     children: PropTypes.any,
     title: PropTypes.string

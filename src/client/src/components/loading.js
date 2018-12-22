@@ -20,6 +20,4 @@ $Loading.propTypes = {
     classes: object.isRequired
 };
 
-$Loading.displayName = 'Loading';
-
 export const Loading = withStyles(styles)($Loading);

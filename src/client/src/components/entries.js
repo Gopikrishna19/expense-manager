@@ -5,5 +5,3 @@ export const Entries = () =>
     <Page title='All Entries'>
 
     </Page>;
-
-Entries.displayName = 'Entries';

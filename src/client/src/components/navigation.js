@@ -15,5 +15,3 @@ export const Navigation = () =>
             </Tabs>
         }
     </RouteContext.Consumer>;
-
-Navigation.displayName = 'Navigation';

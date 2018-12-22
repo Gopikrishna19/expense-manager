@@ -6,5 +6,3 @@ export const EntriesLoadable = () =>
         loader={() => import('../components/entries')}
         name='Entries'
     />;
-
-EntriesLoadable.displayName = 'EntriesLoadable';

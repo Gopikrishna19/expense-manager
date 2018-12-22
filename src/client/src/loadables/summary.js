@@ -6,5 +6,3 @@ export const SummaryLoadable = () =>
         loader={() => import('../components/summary')}
         name='Summary'
     />;
-
-SummaryLoadable.displayName = 'SummaryLoadable';

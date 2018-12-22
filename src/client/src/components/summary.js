@@ -5,5 +5,3 @@ export const Summary = () =>
     <Page title='Summary'>
 
     </Page>;
-
-Summary.displayName = 'Summary';

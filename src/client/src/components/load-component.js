@@ -14,13 +14,9 @@ export const LoadComponent = props => {
         render
     });
 
-    render.displayName = `Loaded${props.name}`;
-    LoadableContent.displayName = `Loaded${props.name}`;
-
     return <LoadableContent/>;
 };
 
-LoadComponent.displayName = 'LoadComponent';
 LoadComponent.propTypes = {
     loader: PropTypes.func.isRequired,
     name: PropTypes.string

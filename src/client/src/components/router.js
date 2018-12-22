@@ -14,5 +14,3 @@ export const Router = () =>
             <Route path='/add-entry' component={AddEntryLoadable}/>
         </Typography>
     </>;
-
-Router.displayName = 'Router';
