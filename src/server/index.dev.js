@@ -9,6 +9,7 @@ module.exports = (app, mode = development) => {
         const compiler = webpack(config);
 
         const devMiddleware = require('webpack-dev-middleware')(compiler, {
+            hot: true,
             stats: 'minimal',
             writeToDisk: true
         });

@@ -1,12 +1,16 @@
 import React from 'react';
-import {BrowserRouter} from 'react-router-dom';
+import {Navigation} from './components/navigation';
 import {Router} from './components/router';
-import {NavigationLoadable} from './loadables/navigation';
+import {RouteContextProvider} from './providers/route-context-provider';
+import {RouterProvider} from './providers/router-provider';
 
 export const App = () =>
-    <BrowserRouter>
-        <>
-            <NavigationLoadable/>
-            <Router/>
-        </>
-    </BrowserRouter>;
+    <RouterProvider>
+        {
+            props =>
+                <RouteContextProvider {...props}>
+                    <Navigation/>
+                    <Router/>
+                </RouteContextProvider>
+        }
+    </RouterProvider>;

@@ -1,12 +1,19 @@
+import Tab from '@material-ui/core/Tab';
+import Tabs from '@material-ui/core/Tabs';
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import styles from './navigation.css';
+import {RouteContext} from '../providers/route-context-provider';
+import {addNewEntry, entries, summary} from '../utils/path';
 
 export const Navigation = () =>
-    <nav className={styles.nav}>
-        <li><NavLink activeClassName={styles.active} to='/summary'>Summary</NavLink></li>
-        <li><NavLink activeClassName={styles.active} to='/entries'>Entries</NavLink></li>
-        <li><NavLink activeClassName={styles.active} to='/add-entry'>Add new entry</NavLink></li>
-    </nav>;
+    <RouteContext.Consumer>
+        {({location}) =>
+            <Tabs value={location.pathname} centered>
+                <Tab component={NavLink} label='Summary' to={summary} value={summary}/>
+                <Tab component={NavLink} label='Entries' to={entries} value={entries}/>
+                <Tab component={NavLink} label='Add new entry' to={addNewEntry} value={addNewEntry}/>
+            </Tabs>
+        }
+    </RouteContext.Consumer>;
 
 Navigation.displayName = 'Navigation';

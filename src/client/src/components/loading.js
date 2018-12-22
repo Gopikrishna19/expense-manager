@@ -1,14 +1,25 @@
+import {withStyles} from '@material-ui/core/styles';
+import {object} from 'prop-types';
 import React from 'react';
-import styles from './loading.css';
+import {join} from '../utils/class-names';
+import loading from './loading.css';
 
-export const Loading = () =>
-    <div className={styles.container}>
-        <div className={styles.loader}>
-            <div className={styles.dot}/>
-            <div className={styles.dot}/>
-            <div className={styles.dot}/>
-            <div className={styles.dot}/>
+const styles = (theme) => ({dot: {backgroundColor: theme.palette.secondary.main}});
+
+const $Loading = props =>
+    <div className={loading.container}>
+        <div className={loading.loader}>
+            <div className={join(loading.dot, props.classes.dot)}/>
+            <div className={join(loading.dot, props.classes.dot)}/>
+            <div className={join(loading.dot, props.classes.dot)}/>
+            <div className={join(loading.dot, props.classes.dot)}/>
         </div>
     </div>;
 
-Loading.displayName = 'Loading';
+$Loading.propTypes = {
+    classes: object.isRequired
+};
+
+$Loading.displayName = 'Loading';
+
+export const Loading = withStyles(styles)($Loading);
