@@ -4,10 +4,16 @@ import React from 'react';
 import {join} from '../utils/class-names';
 import loading from './loading.css';
 
-const styles = (theme) => ({dot: {backgroundColor: theme.palette.secondary.main}});
+const styles = (theme) => ({
+    container: {padding: theme.spacing.unit * 2},
+    dot: {
+        backgroundColor: theme.palette.secondary.main,
+        margin: theme.spacing.unit
+    }
+});
 
 const $Loading = props =>
-    <div className={loading.container}>
+    <div className={join(loading.container, props.classes.container)}>
         <div className={loading.loader}>
             <div className={join(loading.dot, props.classes.dot)}/>
             <div className={join(loading.dot, props.classes.dot)}/>
