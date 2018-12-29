@@ -15,7 +15,7 @@ import Close from '@material-ui/icons/Close';
 import {object} from 'prop-types';
 import React, {Component} from 'react';
 import {RouteContext} from '../providers/route-context-provider';
-import {entryCategories, entryCategoryType, entryFields, entryType, getDefaultEntry} from '../state/entry';
+import {entryCategories, entryCategoryType, entryFields, entryType, getDefaultEntry} from '../../../schema/state/entry';
 import {addNewEntry} from '../utils/path';
 import {Page} from './page';
 

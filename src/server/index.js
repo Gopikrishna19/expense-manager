@@ -20,7 +20,7 @@ app.use(express.static(dist));
 
 app.use((req, res, next) => {
     if (req.method === 'GET' || req.method === 'HEAD') {
-        if (req.accepts('html')) {
+        if (req.accepts('html') && !req.url.match(/api/)) {
             return res.sendFile('index.html', {root: dist}, err => {
                 if (err) {
                     logger.error(err.message);
