@@ -1,4 +1,4 @@
-const {GraphQLObjectType, GraphQLID, GraphQLFloat, GraphQLList, GraphQLNonNull} = require('graphql');
+const {GraphQLObjectType, GraphQLID, GraphQLList, GraphQLNonNull} = require('graphql');
 
 const {Entry} = require('./entry');
 const models = require('../models');
@@ -6,7 +6,7 @@ const models = require('../models');
 const entries = {
     description: 'Get all entries',
     resolve() {
-        return models.Entry.find();
+        return models.Entry.find().sort({date: 1});
     },
     type: new GraphQLList(Entry)
 };
@@ -20,21 +20,10 @@ const entry = {
     type: Entry
 };
 
-const initialAmount = {
-    description: 'Get initial amount',
-    resolve() {
-        return models.InitialAmount
-            .find()
-            .then(results => results [0].amount);
-    },
-    type: GraphQLFloat
-};
-
 module.exports.Query = new GraphQLObjectType({
     fields: {
         entries,
-        entry,
-        initialAmount
+        entry
     },
     name: 'Query'
 });

@@ -3,6 +3,7 @@ import * as t from 'tcomb-validation';
 export const entryFields = {
     amount: 'amount',
     category: 'category',
+    date: 'date',
     reason: 'reason',
     type: 'type'
 };
@@ -36,33 +37,34 @@ export const entryCategories = {
     [entryCategoryType.miscellaneous]: 'Miscellaneous'
 };
 
-const EntryType = t.enums(entryType, 'EntryType');
-const NonZeroNumber = t.refinement(t.Number, value => value > 0, 'NonZeroNumber');
-const NonEmptyString = t.refinement(t.String, value => value.trim() !== '', 'NonEmptyString');
+const TEntryType = t.enums(entryType, 'TEntryType');
+const TNonZeroNumber = t.refinement(t.Number, value => value > 0, 'TNonZeroNumber');
+const TNonEmptyString = t.refinement(t.String, value => value.trim() !== '', 'TNonEmptyString');
 
-const Entry = t.struct({
+export const TEntry = t.struct({
     [entryFields.amount]: t.Number,
     [entryFields.category]: t.String,
+    [entryFields.date]: t.maybe(t.Number),
     [entryFields.reason]: t.String,
-    [entryFields.type]: EntryType
-}, 'Entry');
+    [entryFields.type]: TEntryType
+}, 'TEntry');
 
-Entry.prototype.updateField = function (field, value) {
-    return Entry.update(this, {[field]: {$set: value}});
+TEntry.prototype.updateField = function (field, value) {
+    return TEntry.update(this, {[field]: {$set: value}});
 };
-Entry.prototype.getValidations = function () {
+TEntry.prototype.getValidations = function () {
     const validations = {
-        [entryFields.amount]: t.validate(this.amount, NonZeroNumber).isValid(),
-        [entryFields.category]: t.validate(this.category, NonEmptyString).isValid(),
-        [entryFields.reason]: t.validate(this.reason, NonEmptyString).isValid(),
-        [entryFields.type]: t.validate(this.type, EntryType).isValid()
+        [entryFields.amount]: t.validate(this.amount, TNonZeroNumber).isValid(),
+        [entryFields.category]: t.validate(this.category, TNonEmptyString).isValid(),
+        [entryFields.reason]: t.validate(this.reason, TNonEmptyString).isValid(),
+        [entryFields.type]: t.validate(this.type, TEntryType).isValid()
     };
     const all = Object.values(validations).every(valid => valid);
 
     return Object.assign(validations, {all});
 };
 
-export const getDefaultEntry = () => new Entry({
+export const getDefaultEntry = () => new TEntry({
     [entryFields.amount]: 0,
     [entryFields.category]: '',
     [entryFields.reason]: '',
