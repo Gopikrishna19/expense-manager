@@ -9,7 +9,7 @@ import {query} from '../utils/gql';
 import {Entry} from './entry';
 import {Page} from './page';
 
-const getEntries = () => query`
+const getEntries = query`
 entries {
     id
     category
