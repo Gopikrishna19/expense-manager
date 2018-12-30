@@ -22,6 +22,7 @@ export const entryCategoryType = {
     medical: 'medical',
     miscellaneous: 'miscellaneous',
     rent: 'rent',
+    savings: 'savings',
     travel: 'travel'
 };
 
@@ -34,6 +35,7 @@ export const entryCategories = {
     [entryCategoryType.family]: 'Family Expenses',
     [entryCategoryType.travel]: 'Travel',
     [entryCategoryType.homeImprovement]: 'Home Improvement',
+    [entryCategoryType.savings]: 'Savings',
     [entryCategoryType.miscellaneous]: 'Miscellaneous'
 };
 
