@@ -9,16 +9,14 @@ import {query} from '../utils/gql';
 import {Entry} from './entry';
 import {Page} from './page';
 
-const getEntries = query`
-entries {
+const getEntries = query`entries {
     id
+    amount
     category
     date
     reason
     type
-    amount
-}
-`;
+}`;
 
 export class Entries extends Component {
     state = {entries: []};
