@@ -1,4 +1,4 @@
-const {GraphQLObjectType, GraphQLID, GraphQLString, GraphQLFloat, GraphQLNonNull} = require('graphql');
+const {GraphQLObjectType, GraphQLID, GraphQLList, GraphQLString, GraphQLFloat, GraphQLNonNull} = require('graphql');
 
 const {TransactionType} = require('./transaction-type');
 const {Timestamp} = require('./timestamp');
@@ -26,9 +26,11 @@ const entryFields = module.exports.entryFields = {
     }
 };
 
-module.exports.Entry = new GraphQLObjectType({
+const Entry = module.exports.Entry = new GraphQLObjectType({
     fields() {
         return Object.assign({id: {type: GraphQLID}}, entryFields);
     },
     name: 'Entry'
 });
+
+module.exports.EntryList = new GraphQLList(Entry);

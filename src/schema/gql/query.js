@@ -1,6 +1,6 @@
-const {GraphQLObjectType, GraphQLID, GraphQLList, GraphQLNonNull} = require('graphql');
+const {GraphQLObjectType, GraphQLID, GraphQLNonNull} = require('graphql');
 
-const {Entry} = require('./entry');
+const {Entry, EntryList} = require('./entry');
 const models = require('../models');
 
 const entries = {
@@ -8,7 +8,7 @@ const entries = {
     resolve() {
         return models.Entry.find().sort({date: 1});
     },
-    type: new GraphQLList(Entry)
+    type: EntryList
 };
 
 const entry = {
@@ -20,8 +20,26 @@ const entry = {
     type: Entry
 };
 
+const debits = {
+    description: 'Get all debit records',
+    resolve() {
+        return models.Entry.find({type: {$eq: 'debit'}});
+    },
+    type: EntryList
+};
+
+const credits = {
+    description: 'Get all credit records',
+    resolve() {
+        return models.Entry.find({type: {$eq: 'credit'}});
+    },
+    type: EntryList
+};
+
 module.exports.Query = new GraphQLObjectType({
     fields: {
+        credits,
+        debits,
         entries,
         entry
     },

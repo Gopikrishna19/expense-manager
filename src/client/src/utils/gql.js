@@ -9,7 +9,7 @@ export const query = template => () =>
     doGet('/api', {query: {query: buildQuery(template)}});
 
 export const mutation = template => (inputType, input) =>
-    doPost('/api', {
+    doPost('http://localhost:2062/api', {
         payload: {
             query: buildMutation(template, inputType),
             variables: {input}
