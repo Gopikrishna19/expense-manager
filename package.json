@@ -16,7 +16,7 @@
     "@material-ui/icons": "3.0.1",
     "body-parser": "1.18.3",
     "chalk": "2.4.1",
-    "express": "4.16.4",
+    "express": "4.17.3",
     "express-graphql": "0.7.1",
     "graphql": "14.0.2",
     "minimist": "1.2.0",
